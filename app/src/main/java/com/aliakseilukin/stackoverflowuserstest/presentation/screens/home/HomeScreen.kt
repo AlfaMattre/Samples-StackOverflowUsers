@@ -39,7 +39,9 @@ fun HomeScreen(
 
         is HomeUIState.Error -> {
             Column(
-                modifier = modifier.fillMaxSize().padding(16.dp),
+                modifier = modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -62,8 +64,10 @@ fun HomeScreen(
                     items(
                         items = uiState.users,
                         key = { user -> user.id }
-                    ) {
-                        UserItem(it)
+                    ) { user ->
+                        UserItem(user) { userId ->
+                            viewModel.toggleFollow(userId)
+                        }
                     }
                 }
             }

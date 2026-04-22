@@ -6,10 +6,11 @@ sealed interface HomeUIState {
     data object Loading : HomeUIState
 
     data class Success(
-        val users: List<StackOverflowUserUI>
+        val users: List<StackOverflowUserUI> = emptyList(),
+        val followIds: Set<Int> = emptySet()
     ) : HomeUIState
 
     data class Error(
-        val errorMessage: String
+        val errorMessage: String = ""
     ) : HomeUIState
 }
