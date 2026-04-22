@@ -1,20 +1,15 @@
 package com.aliakseilukin.stackoverflowuserstest.data.data_souce
 
-import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
-class FollowsDataSourceImpl @Inject constructor(@ApplicationContext context: Context) : FollowsDataSource {
-
-    private val preferences: SharedPreferences = context.getSharedPreferences(
-        PREFS_FOLLOW,
-        Context.MODE_PRIVATE
-    )
+class FollowsDataSourceImpl @Inject constructor(
+    private val preferences: SharedPreferences
+) : FollowsDataSource {
 
     private val _followIds = MutableStateFlow(loadFollows())
 
@@ -50,7 +45,6 @@ class FollowsDataSourceImpl @Inject constructor(@ApplicationContext context: Con
     }
 
     companion object {
-        private const val PREFS_FOLLOW = "follows"
         private const val KEY_FOLLOW = "follows_ids"
     }
 }
