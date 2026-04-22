@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">StackOverflowUsersTest</string>
+
+    <string name="users_empty">No users found</string>
+    <string name="button_retry">Retry</string>
+    <string name="user_reputation_value">Reputation: %d</string>
 </resources>
