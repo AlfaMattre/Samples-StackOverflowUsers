@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class StackOverflowUsersResponse(
-    @SerialName("items") val users: List<StackOverflowUserResponse>
+    @SerialName("items") val users: List<StackOverflowUserResponse>? = null
 )
