@@ -26,12 +26,12 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "")
+            buildConfigField("String", "BASE_URL", "\"http://api.stackexchange.com/\"")
         }
 
         release {
             isMinifyEnabled = false
-            buildConfigField("String", "BASE_URL", "")
+            buildConfigField("String", "BASE_URL", "\"http://api.stackexchange.com/\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

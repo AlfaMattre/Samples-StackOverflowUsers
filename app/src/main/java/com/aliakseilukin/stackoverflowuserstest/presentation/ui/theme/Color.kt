@@ -1,4 +1,4 @@
-package com.aliakseilukin.stackoverflowuserstest.ui.theme
+package com.aliakseilukin.stackoverflowuserstest.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
